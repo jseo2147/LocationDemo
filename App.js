@@ -53,7 +53,7 @@ export default function App() {
   
   console.log(lat_text);
   console.log(long_text);
-  console.log(haversine(start.coords, goal.coords, {unit:'mile'}));
+  console.log(haversine(start.coords, goal.coords, {unit:'mile'})); //haversine function inputs and unit format
   distance = JSON.stringify(haversine(start.coords, goal.coords, {unit:'mile'})); //calculates distace between user and location destination
 
   return (
