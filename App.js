@@ -12,7 +12,7 @@ export default function App() {
       longitude: null
     }
   });
-  const [goal, setGoal] = useState({
+  const [goal, setGoal] = useState({ //destination coordinates (NYIT)
     coords: {
       latitude: 40.769719,
       longitude: -73.98247
@@ -31,7 +31,7 @@ export default function App() {
       setLocation(location);
       setStart({
         coords: {
-          latitude: location.coords.latitude,
+          latitude: location.coords.latitude, 
           longitude: location.coords.longitude
         }
       });
@@ -47,14 +47,14 @@ export default function App() {
   if (errorMsg) {
     text = errorMsg;
   } else if (location) {
-    lat_text = JSON.stringify(location.coords.latitude);
-    long_text = JSON.stringify(location.coords.longitude);
+    lat_text = JSON.stringify(location.coords.latitude); //turn latitude into text
+    long_text = JSON.stringify(location.coords.longitude); //turn longitude into text
   }
   
   console.log(lat_text);
   console.log(long_text);
   console.log(haversine(start.coords, goal.coords, {unit:'mile'}));
-  distance = JSON.stringify(haversine(start.coords, goal.coords, {unit:'mile'}));
+  distance = JSON.stringify(haversine(start.coords, goal.coords, {unit:'mile'})); //calculates distace between user and location destination
 
   return (
     <View style={styles.container}>
